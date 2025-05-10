@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        color: pink;
+        box-shadow: 1px 2px 3px ;
+        border: 2px solid black;
+        font-size: 30px;
+        text-align: center;
+    }
+    button{
+        
+        margin-top: 20px;
+        background-color: aqua;
+        border: 2px solid black;
+        width: 200px;
+        height: 50px;
+    }
+</style>
+<body>
+
+    <p>Card Quantity</p>
+
+    <button onclick="
+       console.log(`Cart quantity: ${cardqty}`);
+          ">Show Qty</button>
+    <button onclick="
+       if(cardqty + 1 > 10){
+            alert('The card is full');
+        }else{
+            cardqty++;
+            console.log(`Card Quantity : ${cardqty}`);
+        }
+         ">Add to Card</button>
+    <button onclick="
+        if(cardqty + 2 > 10){
+            alert('The card is full');
+        }else{
+            cardqty = cardqty += 2;
+            console.log(`Card Quantity : ${cardqty}`);
+        }
+       
+     ">+2</button>
+    <button onclick="
+    if(cardqty + 3 > 10){
+            alert('The card is full');
+        }else{
+            cardqty = cardqty += 3;
+            console.log(`Card Quantity : ${cardqty}`);
+        }
+     ">+3</button>
+
+    <button onclick="
+   if(cardqty + 4 > 10){
+            alert('The card is full');
+        }else{
+            cardqty = cardqty += 4;
+            console.log(`Card Quantity : ${cardqty}`);
+        }
+  ">+4</button>
+
+  <button onclick="
+    if(cardqty + 5 > 10){
+            alert('The card is full');
+        }else{
+            cardqty = cardqty += 5;
+            console.log(`Card Quantity : ${cardqty}`);
+        }
+  ">+5</button>
+
+    <button onclick="
+    if (cardqty - 1 < 0) {
+        alert('Not enough items in the cart');
+      } else {
+        cardqty--;
+        console.log(`Cart quantity: ${cardqty}`);
+      }
+    ">Remove from cart</button>
+
+    <button onclick="
+    if (cardqty - 2 < 0) {
+        alert('Not enough items in the cart');
+      } else {
+        cardqty -= 2;
+        console.log(`Cart quantity: ${cardqty}`);
+      }
+    ">-2</button>
+
+    <button onclick="
+    if (cardqty - 3 < 0) {
+        alert('Not enough items in the cart');
+      } else {
+        cardqty -= 3;
+        console.log(`Cart quantity: ${cardqty}`);
+      }
+    ">-3</button>
+
+
+    <button onclick="
+                cardqty = 0;
+               console.log('Card was reset..');
+               console.log(`Card Quantity : ${cardqty}`);
+               ">Reset Card</button>
+
+
+    <script>
+        let cardqty = 0;
+    </script>
+</body>
+</html>

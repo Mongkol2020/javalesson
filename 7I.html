@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Card Quantity</p>
+
+    <button onclick="
+       console.log(`Cart quantity: ${cardqty}`);
+          ">Show Qty</button>
+    <button onclick="
+        updateCardQty(1);
+         ">Add to Card</button>
+    <button onclick="
+               updateCardQty(2);
+     ">+2</button>
+    <button onclick="
+            updateCardQty(3);
+     ">+3</button>
+
+    <button onclick="
+          updateCardQty(4);
+  ">+4</button>
+
+  <button onclick="
+            updateCardQty(5);
+  ">+5</button>
+
+    <button onclick="
+            updateCardQty(-1);
+    ">Remove from cart</button>
+
+    <button onclick="
+           updateCardQty(-2);
+
+    ">-2</button>
+
+    <button onclick="
+            updateCardQty(-3);
+
+    ">-3</button>
+
+
+    <button onclick="
+                cardqty = 0;
+               console.log('Card was reset..');
+               console.log(`Card Quantity : ${cardqty}`);
+               ">Reset Card</button>
+
+    <script>
+         let cardqty = 0;
+
+    function updateCardQty(change){
+    if(cardqty + change > 10){
+        alert('The cart is full');
+        return;
+    }
+
+    if(cardqty + change < 0){
+        alert('Not enough items in the card');
+        return;
+    }
+
+    cardqty += change;
+    console.log(`Card qty : ${cardqty}`);
+}
+
+    </script>
+</body>
+</html>
