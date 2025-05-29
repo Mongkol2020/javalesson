@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+  Remove onclick="" from the Auto Play button.
+  And add class="js-auto-play-button" so we can
+  select it in JavaScript and use .addEventListener()
+  See 12r.html for the full code.
+-->
+<button class="auto-play-button js-auto-play-button">
+  Auto Play
+</button>
+<script>
+//     document.querySelector('.js-auto-play-button')
+//   .addEventListener('click', () => {
+//     autoPlay();
+//   });
+// See 12r.js for the full code.
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(() => {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+    
+    // When the game is auto playing, change
+    // the text in the button to 'Stop Playing'.
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = 'Stop Playing';
+
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+
+    // When the game is not playing, change
+    // the text back to 'Auto Play'.
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = 'Auto Play';
+  }
+}
+</script>
+</body>
+</html>
